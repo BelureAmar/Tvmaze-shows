@@ -1,0 +1,23 @@
+.carousel .carousel-cell img {
+    cursor: pointer;
+    object-fit: fill !important;
+    filter: brightness(0.75);
+}
+
+@media only screen and (min-width:768px) {
+    .nm-mx-5 {
+        margin-left: 3rem!important;
+        margin-right: 3rem!important;
+    }
+    /* .carousel-container .carousel-arrows:nth-child(n+6) .carousel-arrow-next {
+        display: none;
+    } */
+}
+
+.show-rating {
+    position: absolute;
+    bottom: -13px;
+    right: 10px;
+    color:#fff;
+    font-weight: bold;
+}

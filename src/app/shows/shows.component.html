@@ -1,0 +1,21 @@
+<div *ngIf="popularShows$ | async as popularShows; else error"
+    class="nm-mx-5">
+    <div *ngFor="let genreShow of genreShows" class="row mx-0 my-5">
+        <h4>{{genreShow.name}}</h4>
+        <carousel [cellWidth]="160" [cellsToScroll]="2">
+            <div class="carousel-cell" *ngFor="let show of genreShow.list">
+                <img [routerLink]="['/show', show.id]"
+                    [src]="show?.image ? show?.image?.original :
+                    'assets/images/img-not-found.jpg'">
+                <p class="show-rating">Rating: {{(show?.rating?.average) ?
+                    show?.rating?.average :
+                    'NA'}}</p>
+            </div>
+        </carousel>
+    </div>
+</div>
+<ng-template #error>
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</ng-template>

@@ -1,0 +1,10 @@
+.header-color {
+  background-color: green;
+  z-index: 100000;
+}
+
+@media only screen and (min-width:768px) {
+  .header-color {
+      padding: 10px 65px;
+  }
+}

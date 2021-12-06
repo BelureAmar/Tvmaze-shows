@@ -1,0 +1,25 @@
+<h3 class="col-md-12 col-xs-12 content-padding mb-3">{{name}}</h3>
+<div class="col-md-12 col-xs-12 content-padding row">
+    <div *ngFor="let person of crewList" class="col-md-2 col-sm-6 col-6
+        mb-3">
+        <div class="card">
+            <img class="card-img-top"
+                [src]="person?.person?.image ? person?.person?.image?.medium :
+                'assets/images/img-not-found.jpg'" alt="Card
+                image cap">
+            <div class="card-body">
+                <p *ngIf="name === 'Crew Appearances'" class="card-text
+                    text-truncate"
+                    data-toggle="tooltip"
+                    title="{{person.type}} - {{person.person.name}}">
+                    {{person.type}} - {{person.person.name}}
+                </p>
+                <p *ngIf="name === 'Cast Appearances'" class="card-text
+                    text-truncate" data-toggle="tooltip"
+                    title="{{person.person.name}} as {{person.character.name}}">
+                    {{person.person.name}} as {{person.character.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

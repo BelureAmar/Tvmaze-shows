@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top header-color">
+  <a class="navbar-brand" [routerLink]="['/']" href="#">TVMaze Shows</a>
+   <ul class="navbar-nav mr-auto">
+  </ul>
+  <input type="text" placeholder="search the shows"
+    class="form-control col-sm-2
+    col-md-4
+    mr-sm-2"
+    (keypress)="pressEvent($event)"
+    (keyup.enter)="search($event)" />
+</nav>

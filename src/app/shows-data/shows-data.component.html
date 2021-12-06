@@ -1,0 +1,51 @@
+<div class="row form-group mt-3" *ngIf="showData$ | async as showInfo; else
+    error">
+    <nav aria-label="breadcrumb" class="col-md-12 content-padding mx-auto">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/']" href="#">Home</a></li>
+            <li class="breadcrumb-item" *ngIf="search"><a
+                    [routerLink]="['/search', search]" href="#">Search</a></li>
+        </ol>
+    </nav>
+    <div class="col-md-12 col-xs-12 content-padding mx-auto row
+        align-items-center mb-4">
+        <div class="col-md-9 col-xs-12 text-justify">
+            <h4>{{showInfo?.name}}</h4>
+            <p [innerHTML]="showInfo.summary"></p>
+            <p *ngIf="showInfo?.rating?.average">Rating:
+                {{showInfo?.rating?.average}}
+            </p>
+            <p *ngIf="showInfo?.runtime">Duration: {{showInfo?.runtime}} mins</p>
+        </div>
+        <div class="col-md-3 col-xs-12 text-center">
+            <img class="card-img-top title-img"
+                [src]="showInfo?.image ? showInfo?.image?.original :
+                'assets/images/img-not-found.jpg'" alt="Card image
+                cap">
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12 content-padding mx-auto row">
+        <h3 class="col-md-12 col-xs-12">Seasons</h3>
+        <div class="col-md-6 col-lg-2 col-sm-6 col-xs-6" *ngFor="let season of
+            showInfo?._embedded?.seasons; let i=index">
+            <div class="card mb-4 shadow-sm">
+                <img class="img-card" [src]="season?.image ?
+                    season?.image?.original: 'assets/images/img-not-found.jpg'"
+                    alt="Image not
+                    available">
+                <p *ngIf="!season?.image" class="season-number">Season{{i+1}}</p>
+            </div>
+        </div>
+    </div>
+    <app-crew-data [name]="'Crew Appearances'"
+        *ngIf="showInfo?._embedded?.crew.length"
+        [crewList]="showInfo?._embedded?.crew"></app-crew-data>
+    <app-crew-data [name]="'Cast Appearances'"
+        *ngIf="showInfo?._embedded?.cast.length"
+        [crewList]="showInfo?._embedded?.cast"></app-crew-data>
+</div>
+<ng-template #error>
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</ng-template>

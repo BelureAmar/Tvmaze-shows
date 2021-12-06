@@ -1,0 +1,45 @@
+.img-card {
+    width: 100%;
+    height: 250px;
+}
+
+.title-img {
+    width: 175px;
+}
+
+.card-body {
+    background: #aaa;
+}
+
+h4 {
+    padding: 0;
+}
+
+.col-md-12.mx-auto {
+    margin: 32px 0px 0px;
+    padding: 0 20px;
+}
+
+@media only screen and (min-width:768px) {
+    .col-md-12.content-padding {
+        padding: 0 52px;
+    }
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 12px;
+}
+
+.season-number {
+    position: absolute;
+    top: 91%;
+    left: 41%;
+    color: cadetblue;
+}
+
+@media only screen and (max-width:768px) {
+    .nav {
+        justify-content: center;
+    }
+}
+

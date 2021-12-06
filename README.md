@@ -24,12 +24,12 @@ Below are the packages used as part of the development
 - Components design: bootstrap
 - Third party library: angular-responsive-carousel
 - Unit testing: Karma and Jasmine
-- Code formatters: TS-Linter
+
 
 ## Main Stack
 
 - HTML5
-- css
+- CSS
 - ECMAScript 6 (ES6)
 
 ## Prerequisites and Installation

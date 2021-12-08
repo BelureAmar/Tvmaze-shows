@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ShowModel } from '../Model/models';
 
 @Component({
@@ -6,14 +6,8 @@ import { ShowModel } from '../Model/models';
   templateUrl: './crew-data.component.html',
   styleUrls: ['./crew-data.component.css']
 })
-export class CrewDataComponent implements OnInit {
+export class CrewDataComponent {
 
   @Input() crewList: any[];
   @Input() name: string;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

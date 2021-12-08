@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 
@@ -7,12 +7,9 @@ import { ServiceService } from '../services/service.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(private service: ServiceService, private route: Router) { }
-
-  ngOnInit(): void {
-  }
 
   search(event): void {
     if (event) {
